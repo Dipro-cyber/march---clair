@@ -1,0 +1,13 @@
+.git
+.aistudio
+.agents
+.aws
+.codex
+.env*
+.judge-tools
+.npm-cache
+node_modules
+dist
+build
+coverage
+*.log

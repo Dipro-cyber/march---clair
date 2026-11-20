@@ -1,0 +1,6 @@
+{
+  "name": "Marché Éclair",
+  "description": "Un jeu de marché interactif pour comprendre le réseau Lightning de Bitcoin simplement, en français et en anglais.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

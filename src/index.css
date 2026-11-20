@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-cream: #FFF6E5;
+    --color-cream-dark: #F5E6C8;
+    --color-indigo: #1F2A6B;
+    --color-terracotta: #D9582B;
+    --color-saffron: #F2B01E;
+    --color-leaf: #2E7D4F;
+    --color-ink: #1B1B1F;
+    --font-display: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
+    --font-body: 'Nunito', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    color: #1B1B1F;
+    background-color: #FFF6E5;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 3px solid #1F2A6B;
+    outline-offset: 2px;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle woven basket border motif */
+.woven-border {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #1F2A6B 0px,
+    #1F2A6B 6px,
+    #F2B01E 6px,
+    #F2B01E 12px,
+    #D9582B 12px,
+    #D9582B 18px,
+    #FFF6E5 18px,
+    #FFF6E5 24px
+  );
+}
+
+/* Striped market stall awning */
+.awning-stripes {
+  background: repeating-linear-gradient(
+    90deg,
+    #D9582B 0px,
+    #D9582B 28px,
+    #FFF6E5 28px,
+    #FFF6E5 56px,
+    #1F2A6B 56px,
+    #1F2A6B 84px,
+    #FFF6E5 84px,
+    #FFF6E5 112px
+  );
+}
+
+/* Customer walk-in and outcome CSS transforms (under 600ms) */
+.customer-stage-actor {
+  transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1), opacity 360ms ease;
+  will-change: transform;
+}
+
+.customer-stage-actor--entering {
+  transform: translateX(-64px);
+  opacity: 0.78;
+}
+
+.customer-stage-actor--waiting {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.customer-stage-actor--happy-leaving {
+  transform: translateX(26px) translateY(-4px);
+  opacity: 1;
+}
+
+.customer-stage-actor--confused-leaving {
+  transform: translateX(-18px) rotate(-2deg);
+  opacity: 1;
+}
+
+/* Coins animating into the sats purse/jar (520ms, strictly under 600ms) */
+@keyframes coinDropIntoJar {
+  0% {
+    transform: translateY(-28px) scale(0.75);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(-14px) scale(1.08);
+    opacity: 1;
+  }
+  85% {
+    transform: translateY(10px) scale(0.92);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(18px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes purseJarBounce {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-coin-drop-1 {
+  animation: coinDropIntoJar 500ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-coin-drop-2 {
+  animation: coinDropIntoJar 540ms cubic-bezier(0.22, 1, 0.36, 1) 30ms forwards;
+}
+
+.animate-coin-drop-3 {
+  animation: coinDropIntoJar 560ms cubic-bezier(0.22, 1, 0.36, 1) 50ms forwards;
+}
+
+.animate-purse-bounce {
+  animation: purseJarBounce 460ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .customer-stage-actor,
+  .customer-stage-actor--entering,
+  .customer-stage-actor--waiting,
+  .customer-stage-actor--happy-leaving,
+  .customer-stage-actor--confused-leaving {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .animate-coin-drop-1,
+  .animate-coin-drop-2,
+  .animate-coin-drop-3,
+  .animate-purse-bounce {
+    animation: none !important;
+  }
+}
+

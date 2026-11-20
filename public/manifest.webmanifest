@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "Marché Éclair — Apprendre Lightning au marché",
+  "short_name": "MarchéÉclair",
+  "description": "Jeu de marché interactif bilingue (FR/EN) pour comprendre le réseau Bitcoin Lightning en Afrique de l'Ouest.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFF6E5",
+  "theme_color": "#1F2A6B",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
